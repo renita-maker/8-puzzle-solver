@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Puzzle Solver</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-glow glow1"></div>
+    <div class="background-glow glow2"></div>
+
+    <div class="container">
+        <h1>8 Puzzle Solver</h1>
+        <p class="subtitle">Enter numbers from 0 to 8. Use 0 for the empty tile.</p>
+
+        <div class="input-grid" id="inputGrid">
+            <input type="number" min="0" max="8" class="tile-input">
+            <input type="number" min="0" max="8" class="tile-input">
+            <input type="number" min="0" max="8" class="tile-input">
+            <input type="number" min="0" max="8" class="tile-input">
+            <input type="number" min="0" max="8" class="tile-input">
+            <input type="number" min="0" max="8" class="tile-input">
+            <input type="number" min="0" max="8" class="tile-input">
+            <input type="number" min="0" max="8" class="tile-input">
+            <input type="number" min="0" max="8" class="tile-input">
+        </div>
+
+        <div class="button-group">
+            <button onclick="solvePuzzle()">Solve</button>
+            <button class="secondary" onclick="fillSample()">Sample</button>
+            <button class="danger" onclick="clearGrid()">Clear</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="info-box">
+            <span id="stepCount">Steps: 0</span>
+            <span id="stateCount">State: 0</span>
+        </div>
+
+        <div class="board" id="board"></div>
+
+        <div class="controls">
+            <button onclick="prevStep()">⟵ Prev</button>
+            <button onclick="playAnimation()">▶ Play</button>
+            <button onclick="pauseAnimation()">⏸ Pause</button>
+            <button onclick="nextStep()">Next ⟶</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
